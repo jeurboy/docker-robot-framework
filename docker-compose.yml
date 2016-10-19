@@ -1,0 +1,9 @@
+robot-test1:
+  build: .
+  volumes:
+    - ./robots/test1:/robots
+  tty: true
+  environment:
+    - ROBOT_TESTS=/robots/
+    - BROWSER=firefox
+  container_name: robot-testsuite
