@@ -2,7 +2,7 @@
 set -e
 
 # Set the defaults
-DEFAULT_RES="1280x1024x24"
+DEFAULT_RES="1280x800x24"
 DEFAULT_DISPLAY=":"99
 RES=${RES:-$DEFAULT_RES}
 DISPLAY=${DISPLAY:-$DEFAULT_DISPLAY}
@@ -17,7 +17,7 @@ Xvfb ${DISPLAY} -ac -screen 0 ${RES} &
 export DISPLAY=${DISPLAY}
 
 echo -e "Executing robot tests"
-pybot --variable BROWSER:${BROWSER} ${ROBOT_TESTS}
+pybot --variable BROWSER:${BROWSER} --outputdir /output ${ROBOT_TESTS}
 
 # Stop Xvfb
 kill -9 $(pgrep Xvfb)
