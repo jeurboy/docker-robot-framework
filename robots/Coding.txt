@@ -1,0 +1,12 @@
+*** Setting ***
+Library    Selenium2Library
+
+*** Keywords ****
+Set Environment Variable  webdriver.gecko.driver  /usr/bin/geckodriver
+
+*** Variable ****
+${BROWSER}     ff
+
+*** Test Cases ***
+TestCase
+    Open Browser    https://www.google.com    ${BROWSER}

@@ -16,6 +16,8 @@ echo -e "Starting Xvfb on display ${DISPLAY} with res ${RES}"
 Xvfb ${DISPLAY} -ac -screen 0 ${RES} &
 export DISPLAY=${DISPLAY}
 
+rm -rf /output/*
+
 echo -e "Executing robot tests"
 pybot --variable BROWSER:${BROWSER} --outputdir /output ${ROBOT_TESTS}
 

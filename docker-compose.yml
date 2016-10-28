@@ -1,7 +1,8 @@
-robot-test1:
+robot-default:
   build: .
   volumes:
-    - ./robots/test1:/robots
+    - ./robots/default:/robots
+    - ./output:/output
   tty: true
   environment:
     - ROBOT_TESTS=/robots/
