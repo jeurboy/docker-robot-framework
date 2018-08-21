@@ -3,16 +3,20 @@ MAINTAINER Nick Robinson <nickrobinson@gatech.edu>
 
 RUN apt-get update
 RUN apt-get install -y python-pip python-dev gcc phantomjs
-RUN pip install robotframework==2.9.2
+RUN pip install robotframework==3.0.4
 RUN pip install pycrypto
 
 RUN apt-get install -y build-essential libssl-dev libffi-dev python-dev
 RUN pip install robotframework-sshlibrary
-RUN pip install robotframework-selenium2library
+RUN pip install robotframework-selenium2library==3.0.0
 
 RUN apt-get install -y wget
 RUN apt-get install -y firefox
 RUN apt-get install -y xvfb
+
+# RUN wget https://ftp.mozilla.org/pub/firefox/releases/61.0/linux-x86_64/en-US/firefox-61.0.tar.bz2
+# RUN tar xjf firefox-61.0.tar.bz2
+# RUN mv firefox/firefox /usr/bin/firefox
 
 # Install geckodriver
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
